@@ -1,6 +1,6 @@
 <template>
     <div>
-       <h2>User Posts</h2>
+       <h2>Posts</h2>
        <div>
            <ul>
                <li v-for="post in posts" :key="post.id">
