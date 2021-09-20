@@ -7,9 +7,12 @@
           <h5 class="card-title">Name: {{user.name}}</h5>
             <p class="card-text">Username: {{user.username}}</p>
             <p class="card-text">Email: {{user.email}}</p>
+            
             <!-- <router-link :to = "{ path: '/posts/' + user.id }" class="btn btn-primary">View Posts</router-link> -->
+            <div class="card-body-button">
             <button class="btn btn-primary mr-3" @click= viewPost(user.id) >View Posts</button>
             <button class="btn btn-primary ml-3" @click= viewComments(user.id) >View Comments</button>
+            </div>
         </div>
       </div>
     </div> 
@@ -62,13 +65,26 @@ export default {
   display: inline-flex;
   width: 18rem;
   flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 270px;
+  
+}
+.card-body{
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: center;
+  
+}
+.card-body-button{
+  display: inline-flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  min-height: 215px;
-  
 }
 button{
   margin: 3px;
+  width: 60%;
 }
 .back-ground {
   background-color: antiquewhite;
