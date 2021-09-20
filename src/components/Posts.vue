@@ -44,7 +44,7 @@ li{
 }
 ul{
     list-style-type: none ;
-    margin: 0;
+    margin: 20;
     padding: 0;
 }
 
