@@ -1,7 +1,8 @@
 <template>
     <div>
-        <h2>User Comments</h2>
         <div class="container">
+        <h2>User Comments</h2>
+        <div class="cards">
             <ul>
                 <li v-for="comment in comments" :key="comment.id">
                     <div class="app-comments">
@@ -11,6 +12,7 @@
                     </div>
                 </li>
             </ul>
+        </div>
         </div>
     </div>
 </template>
@@ -39,7 +41,15 @@ h2 {
 }
 li{
     list-style-type: none;
+    margin: 0;
+    padding: 0;
 }
+ul{
+    list-style-type: none ;
+    margin: 0;
+    padding: 0;
+}
+
 
 .app-comments{
   display: flex;
@@ -50,9 +60,11 @@ li{
   flex-direction: column;
   justify-content: center;
   min-height: 120px;
+
   /* align-items: center; */
  text-align: justify;
  color: rgb(46, 46, 46);
+ 
 }
 
 .app-comments:hover{

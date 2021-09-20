@@ -38,7 +38,14 @@ h2 {
   margin-bottom: 40px;
 }
 li{
-  list-style-type: none;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+ul{
+    list-style-type: none ;
+    margin: 0;
+    padding: 0;
 }
 
 p{
