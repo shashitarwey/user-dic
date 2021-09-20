@@ -68,7 +68,7 @@ export default {
   
 }
 button{
-  margin: 0 3px;
+  margin: 3px;
 }
 .back-ground {
   background-color: antiquewhite;
