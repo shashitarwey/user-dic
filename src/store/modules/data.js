@@ -6,7 +6,11 @@ const store = {
         userPosts: [],
         postComments: []
     },
-    getters: {},
+    getters: {
+        getAllUser: (state) => state.users,
+        getUserComments: (state) => state.postComments,
+        getUserPosts: (state) => state.userPosts,
+    },
     actions: {
         getUsers({ commit }) {
             axios.get(`https://jsonplaceholder.typicode.com/users`)
@@ -17,26 +21,26 @@ const store = {
         getPosts({ commit },id) {
             axios.get(`https://jsonplaceholder.typicode.com/posts`)
                 .then( response => {
-                    commit('SET_POSTS', { posts: response.data, id })
+                    commit('SET_POSTS', {data: response.data, id})
                 })
 
         },
         getComments({ commit }, id) {
-            axios.get(`https://jsonplaceholder.typicode.com/comments`)
+            axios.get(`https://jsonplaceholder.typicode.com/posts/${id}/comments`)
                 .then( response => {
-                    commit('SET_COMMENTS', { comments: response.data, id})
+                    commit('SET_COMMENTS',response.data)
                 })
-        }
+        },
     },
     mutations: {
-        SET_USERS(state, users) {
-            state.users = users;
+        SET_USERS(state, data) {
+            state.users = data;
         },
-        SET_POSTS(state, { posts, id}) {
-            state.userPosts = posts.filter((post) => post.userId === parseInt(id))
+        SET_POSTS(state, { data, id}) {
+            state.userPosts = data.filter((post) => post.userId === parseInt(id))
         },
-        SET_COMMENTS(state, { comments,id}) {
-            state.postComments = comments.filter((comment) => comment.postId === parseInt(id));
+        SET_COMMENTS(state, data) {
+            state.postComments = state.comments = data;
         }
     }
 

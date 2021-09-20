@@ -17,13 +17,13 @@ const routes = [
         path: "/comments/:id",
         name: "Comments",
         component: Comments,
-        //props: true
+        props: true
     },
     {
         path: "/posts/:id",
         name: "Posts",
         component: Posts,
-        //props: true
+        props: true
     }
 ]
 
